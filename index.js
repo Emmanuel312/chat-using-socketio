@@ -14,7 +14,6 @@ var messages = []
 
 io.on('connection', socket =>
 {
-
     socket.emit('previousMessages', messages)
 
     socket.on('sendMessage', data =>

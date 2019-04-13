@@ -17,7 +17,8 @@
         <button type="submit">Enviar mensagem</button>
     </form>
     <script type="text/javascript">
-        const socket = io(process.env.PORT || 'http://localhost:3000') // faazendo a conexao com o socket
+        
+        const socket = io('https://chat-using-socketio.herokuapp.com') // fazendo a conexao com o socket
 
         socket.on('previousMessages', mensagens =>
         {
@@ -46,6 +47,7 @@
                     author : author,
                     message: message
                 }
+               
                 renderMessage(data)
                 socket.emit('sendMessage', data)
 
